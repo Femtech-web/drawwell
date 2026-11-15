@@ -51,6 +51,14 @@ if (allowability === "allowable" && citations.length === 0) allowability = "need
 
 Drawwell prepares a request. It does not submit to G5, approve payments or give legal advice; the Department decides.
 
+## Who uses it, and who pays
+
+- **Small grantees** (TRIO programs, community school partnerships, charter networks, adult education providers): one finance person drawing federal cash every two weeks. A subscription per award, priced below an hour of a consultant's time a month.
+- **Fiscal sponsors and grant consultants:** one office drawing for dozens of awards; per-seat pricing, with evidence reports to hand each client and auditor.
+- **State education agencies:** federal education money reaches districts through states, so states now review district justifications before ED does. A reviewer view, licensed per state.
+
+The same check applies wherever an agency asks recipients to justify each drawdown: HHS has since 2025, and NASA, NIH and the Department of Labor have their own versions. Department of Education first.
+
 ## The one moment
 
 The Upward Bound sample draws its November cash needs in advance: twelve ledger rows, $26,512.20. One review, one live SERV call ([recorded run](docs/results/runs/)), and Drawwell finds:

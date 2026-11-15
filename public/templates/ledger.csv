@@ -2,3 +2,25 @@ row_id,incurred_date,payment_date,status,payee,payee_type,description,account,bu
 L-0901,2026-09-01,2026-09-18,paid,Riverbend Payroll,internal,"UB staff salaries, pay period 09/01-09/12",6100 Salaries & Wages,Personnel,6461.54,PAY-0912,G5-0915
 L-0902,2026-09-01,2026-09-18,paid,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 09/01-09/12",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-0912,G5-0915
 L-0903,2026-09-08,2026-09-14,paid,Staples Business,vendor,Tutoring center binders and printer paper,6420 Program Supplies,Supplies,684.17,RCPT-ST-0908,G5-0915
+L-0904,2026-09-13,2026-10-01,paid,Riverbend Payroll,internal,"UB staff salaries, pay period 09/13-09/26",6100 Salaries & Wages,Personnel,6461.54,PAY-0926,G5-1002
+L-0905,2026-09-13,2026-10-01,paid,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 09/13-09/26",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-0926,G5-1002
+L-0906,2026-09-30,2026-10-02,paid,Lakeside Tutoring Collective,vendor,Saturday Academy tutoring - September hours,6500 Contract Services,Contractual,1725.00,INV-LTC-0930,G5-1002
+L-0907,2026-09-30,2026-10-02,paid,Participant stipend batch,participant,Student stipends - September attendance (29 students),6700 Participant Stipends,Training Stipends,1160.00,STIP-SEP,G5-1002
+L-0908,2026-09-27,2026-10-16,paid,Riverbend Payroll,internal,"UB staff salaries, pay period 09/27-10/10",6100 Salaries & Wages,Personnel,6461.54,PAY-1010,G5-1016
+L-0909,2026-09-27,2026-10-16,paid,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 09/27-10/10",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-1010,G5-1016
+L-0910,2026-10-05,2026-10-14,paid,Scholastic Learning Supply,vendor,"Calculators, graphing (classroom set of 30)",6420 Program Supplies,Supplies,3418.50,INV-SLS-1005,G5-1016
+L-0911,2026-10-11,2026-10-30,paid,Riverbend Payroll,internal,"UB staff salaries, pay period 10/11-10/24",6100 Salaries & Wages,Personnel,6461.54,PAY-1024,G5-1102
+L-0912,2026-10-11,2026-10-30,paid,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 10/11-10/24",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-1024,G5-1102
+L-0913,2026-10-18,2026-10-28,paid,Staples Business,vendor,"Printer toner, folders, student planners",6420 Program Supplies,Supplies,2791.33,RCPT-ST-1018,G5-1102
+L-1101,2026-10-25,2026-11-18,scheduled,Riverbend Payroll,internal,"UB staff salaries, pay period 10/25-11/07",6100 Salaries & Wages,Personnel,6461.54,PAY-1107,
+L-1102,2026-10-25,2026-11-18,scheduled,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 10/25-11/07",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-1107,
+L-1103,2026-10-31,2026-11-17,scheduled,Lakeside Tutoring Collective,vendor,Saturday Academy tutoring - October hours,6500 Contract Services,Contractual,1850.00,INV-LTC-1031,
+L-1104,2026-11-04,2026-11-06,paid,Barnes & Noble Education,vendor,SAT prep workbooks (40 copies),6420 Program Supplies,Supplies,1236.00,RCPT-BN-2291,
+L-1105,2026-11-06,2026-11-10,paid,Mesa Grill Catering,vendor,Family night catering - college planning workshop 11/06,6810 Program Activities,Other,412.60,RCPT-MESA-1106,
+L-1106,2026-11-12,2026-11-12,paid,Olive & Fig Bistro,vendor,Staff appreciation lunch,6810 Program Activities,Other,286.40,RCPT-OF-1112,
+L-1107,2026-10-31,2026-11-17,scheduled,Participant stipend batch,participant,Student stipends - October attendance (31 students),6700 Participant Stipends,Training Stipends,1240.00,STIP-OCT,
+L-1108,2026-11-03,2026-11-09,paid,United Airlines,vendor,Director airfare - regional TRIO conference,6300 Travel,Travel,684.20,ITIN-UA-7731,
+L-1109,2026-11-13,2026-11-19,scheduled,CDW-G,vendor,Chromebooks for computer lab (12 units),6420 Program Supplies,Supplies,4188.00,INV-CDW-5521,
+L-1110,2026-11-13,2026-11-18,scheduled,CDW-G,vendor,Interactive display panel for tutoring room,6420 Program Supplies,Supplies,5890.00,INV-CDW-5522,
+L-1111,2026-11-01,2026-11-30,scheduled,St. Brendan Parish Hall,vendor,Saturday Academy room rental - November,6810 Program Activities,Other,600.00,INV-SBP-1130,
+L-1112,2026-09-30,2026-11-17,scheduled,Lakeside Tutoring Collective,vendor,Saturday Academy tutoring - September hours,6500 Contract Services,Contractual,1725.00,INV-LTC-0930,

@@ -91,15 +91,15 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
             <Field label="Program name"><input className={input} value={award.programName} onChange={(e) => set("programName", e.target.value)} placeholder="Upward Bound" /></Field>
             <Field label="Assistance listing"><input className={input} value={award.assistanceListing} onChange={(e) => set("assistanceListing", e.target.value)} placeholder="84.047A" /></Field>
             <Field label="Recipient"><input className={input} value={award.recipient} onChange={(e) => set("recipient", e.target.value)} /></Field>
-            <Field label="Budget period start"><input type="date" className={input} value={award.budgetPeriodStart} onChange={(e) => set("budgetPeriodStart", e.target.value)} /></Field>
-            <Field label="Budget period end"><input type="date" className={input} value={award.budgetPeriodEnd} onChange={(e) => set("budgetPeriodEnd", e.target.value)} /></Field>
+            <Field label="Budget period start"><input type="date" name="budgetPeriodStart" className={input} value={award.budgetPeriodStart} onChange={(e) => set("budgetPeriodStart", e.target.value)} /></Field>
+            <Field label="Budget period end"><input type="date" name="budgetPeriodEnd" className={input} value={award.budgetPeriodEnd} onChange={(e) => set("budgetPeriodEnd", e.target.value)} /></Field>
             <Field label="Payment method" hint="From your Grant Award Notification or G5.">
               <select className={input} value={award.paymentBasis} onChange={(e) => set("paymentBasis", e.target.value as Award["paymentBasis"])}>
                 <option value="advance">Advance (immediate cash needs)</option>
                 <option value="reimbursement">Reimbursement (costs already paid)</option>
               </select>
             </Field>
-            <Field label="Request date"><input type="date" className={input} value={award.requestDate} onChange={(e) => set("requestDate", e.target.value)} /></Field>
+            <Field label="Request date"><input type="date" name="requestDate" className={input} value={award.requestDate} onChange={(e) => set("requestDate", e.target.value)} /></Field>
             {award.paymentBasis === "advance" && (
               <Field label="Disbursement window" hint="Business days, from your written cash procedures.">
                 <input type="number" min={0} max={30} className={input} value={award.advanceWindowDays} onChange={(e) => set("advanceWindowDays", Number(e.target.value))} />
@@ -113,13 +113,13 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
         <div className="space-y-4">
           <div className="font-display text-xl font-semibold">Records</div>
           <Field label="Approved budget (CSV)" hint="Columns: category, approved. Categories as on ED Form 524.">
-            <input type="file" accept=".csv,text/csv" className="text-sm" onChange={(e) => readFile(e.target.files?.[0], setBudgetCsv)} />
+            <input type="file" name="budget" accept=".csv,text/csv" className="text-sm" onChange={(e) => readFile(e.target.files?.[0], setBudgetCsv)} />
           </Field>
           <Field label="Ledger export (CSV)" hint="One row per expense; mark rows already drawn in drawn_in.">
-            <input type="file" accept=".csv,text/csv" className="text-sm" onChange={(e) => readFile(e.target.files?.[0], setLedgerCsv)} />
+            <input type="file" name="ledger" accept=".csv,text/csv" className="text-sm" onChange={(e) => readFile(e.target.files?.[0], setLedgerCsv)} />
           </Field>
           <Field label="Receipts and invoices (optional, .txt)" hint="File name must match the ledger's document column.">
-            <input type="file" accept=".txt,text/plain" multiple className="text-sm" onChange={(e) => readDocs(e.target.files)} />
+            <input type="file" name="documents" accept=".txt,text/plain" multiple className="text-sm" onChange={(e) => readDocs(e.target.files)} />
           </Field>
           <Field label="Award terms (optional)" hint="Paste relevant terms; separate each with a blank line.">
             <textarea className={`${input} min-h-24`} value={termsText} onChange={(e) => setTermsText(e.target.value)} />
