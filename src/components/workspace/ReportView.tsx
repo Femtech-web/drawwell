@@ -174,7 +174,7 @@ export function ReportView({
             {calls.map((c, i) => (
               <li key={i}>
                 {c.purpose} · {c.modelId} · {(c.latencyMs / 1000).toFixed(1)}s · {c.promptTokens ?? "?"} in / {c.completionTokens ?? "?"} out
-                {c.features.shadowAgent ? " · shadow agent" : ""}{c.features.promptGuard ? " · prompt guard" : ""}{c.outcome === "empty" ? " · returned empty, retried" : ""}{c.requestId ? ` · ${c.requestId}` : ""}
+                {c.features.shadowAgent ? " · shadow agent" : ""}{c.features.promptGuard ? " · prompt guard" : ""}{c.outcome === "empty" ? " · returned empty, retried" : c.outcome === "error" ? " · failed or timed out, retried" : ""}{c.requestId ? ` · ${c.requestId}` : ""}
               </li>
             ))}
           </ul>

@@ -1,4 +1,4 @@
-import { servChat, type ServFeatures, type ServResponse } from "@/serv/client";
+import { modelId, servChat, type ServFeatures, type ServResponse } from "@/serv/client";
 import { JUSTIFY_SHADOW_HINT, JUSTIFY_SYSTEM, REVIEW_SHADOW_HINT, REVIEW_SYSTEM, justifyUserMessage, reviewUserMessage } from "@/serv/prompts";
 import { JUSTIFY_SCHEMA, reviewSchema, type ServReviewRow } from "@/serv/schema";
 import { equipmentThresholdCents, runChecks } from "./checks";
@@ -68,17 +68,18 @@ export async function reviewRequest(input: ReviewInput, features = reviewFeature
     equipmentThresholdCents: equipmentThresholdCents(input.award.capitalizationThreshold),
   });
   const schema = reviewSchema(forServ.map((r) => r.id), input.terms.map((t) => t.id));
-  // SERV sometimes answers 200 with no content and zero tokens; dropping Prompt Guard, then Multipath, has recovered it.
-  // Drawwell's own instruction scan runs either way, and each attempt is recorded with the features it used.
-  const plans: ServFeatures[] = [
-    features,
-    ...(features.promptGuard ? [{ ...features, promptGuard: false }] : []),
-    ...(features.multipath ? [{ ...features, promptGuard: false, multipath: false }] : []),
+  // Full features were the most accurate on the benchmark but slow and sometimes empty; each fallback has its own
+  // time budget so a review ends inside the route's 300 s, finishing on the measured features-off configuration.
+  const plans: { features: ServFeatures; timeoutMs: number }[] = [
+    { features, timeoutMs: 150_000 },
+    ...(features.promptGuard ? [{ features: { ...features, promptGuard: false }, timeoutMs: 90_000 }] : []),
+    ...(features.multipath || features.shadow ? [{ features: { ...features, promptGuard: false, multipath: false, shadow: null }, timeoutMs: 45_000 }] : []),
   ];
   for (let i = 0; i < plans.length; i++) {
+    const started = Date.now();
     try {
-      const res = await servChat({ system, user, features: plans[i], schema });
-      result.calls.push(record("review", res, plans[i], i + 1));
+      const res = await servChat({ system, user, features: plans[i].features, schema, timeoutMs: plans[i].timeoutMs });
+      result.calls.push(record("review", res, plans[i].features, i + 1));
       if (!res.content.trim()) continue;
       const parsed = JSON.parse(res.content) as { rows: ServReviewRow[] };
       const verified = verifyServReview(parsed.rows ?? [], forServ, input.documents, input.terms, input.ledger);
@@ -90,6 +91,12 @@ export async function reviewRequest(input: ReviewInput, features = reviewFeature
       return result;
     } catch (e) {
       result.servError = e instanceof Error ? e.message : String(e);
+      const f = plans[i].features;
+      result.calls.push({
+        purpose: "review", modelId: modelId(f), servedModel: "", latencyMs: Date.now() - started, promptTokens: null,
+        completionTokens: null, requestId: null, attempt: i + 1, outcome: "error",
+        features: { multipath: f.multipath, kronos: f.kronos, promptGuard: f.promptGuard, shadowAgent: !!f.shadow },
+      });
     }
   }
   result.servError ??= "SERV returned no content";

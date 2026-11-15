@@ -1,0 +1,806 @@
+{
+  "ranAt": "2026-11-15T21:09:26.630Z",
+  "config": "drawwell-plain",
+  "model": "gpt-5.4-mini",
+  "features": {
+    "model": "gpt-5.4-mini",
+    "multipath": true,
+    "kronos": false,
+    "promptGuard": true,
+    "shadow": {
+      "hint": "Every request row id appears exactly once. Every citation quote is copied word for word from the provided rule excerpts or award terms. No row is likely_unallowable when the cited rule contains an exception that could apply. document_total_quote is copied exactly from the document.",
+      "maxIterations": 2
+    }
+  },
+  "summary": {
+    "rows": 37,
+    "acceptable": 36,
+    "exact": 33,
+    "unanswered": 0,
+    "unsafeMisses": 0,
+    "overCalls": 0,
+    "categoryCorrect": 36,
+    "categoryLabeled": 36,
+    "mismatchFound": 2,
+    "mismatchExpected": 2,
+    "mismatchFalse": 0,
+    "partialExact": 2,
+    "partialExpected": 3,
+    "partialFalse": 0,
+    "injectionFlagged": 2,
+    "injectionExpected": 2,
+    "codeMissed": 0,
+    "codeExtra": 0,
+    "citationsReturned": 72,
+    "citationsVerified": 67,
+    "latencyMs": 35662,
+    "promptTokens": 45825,
+    "completionTokens": 7478,
+    "estimatedCostUsd": 0.0907,
+    "errors": 0,
+    "bySplit": {
+      "demo": {
+        "rows": 25,
+        "acceptable": 25,
+        "unsafeMisses": 0,
+        "overCalls": 0
+      },
+      "held-out": {
+        "rows": 12,
+        "acceptable": 11,
+        "unsafeMisses": 0,
+        "overCalls": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "request": "upward-bound",
+      "split": "demo",
+      "rows": [
+        {
+          "id": "L-1101",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Personnel",
+            "got": "Personnel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1102",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Fringe Benefits",
+            "got": "Fringe Benefits",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1103",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1104",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": {
+            "expected": true,
+            "got": true
+          },
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1105",
+          "expected": "needs_review",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": {
+            "expected": 3800,
+            "got": 3800
+          },
+          "injection": null
+        },
+        {
+          "id": "L-1106",
+          "expected": "likely_unallowable",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1107",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Training Stipends",
+            "got": "Training Stipends",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1108",
+          "expected": "needs_review",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Travel",
+            "got": "Travel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1109",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "L-1110",
+          "expected": "needs_review",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": false,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Equipment",
+            "got": "Equipment",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        }
+      ],
+      "code": {
+        "expected": [
+          "error:DUPLICATE_DOCUMENT:L-1112",
+          "error:OUTSIDE_ADVANCE_WINDOW:L-1111",
+          "review:EQUIPMENT_THRESHOLD:L-1110",
+          "review:OVER_CATEGORY_BUDGET:L-1104"
+        ],
+        "got": [
+          "error:DUPLICATE_DOCUMENT:L-1112",
+          "error:OUTSIDE_ADVANCE_WINDOW:L-1111",
+          "review:EQUIPMENT_THRESHOLD:L-1110",
+          "review:OVER_CATEGORY_BUDGET:L-1104"
+        ],
+        "missed": [],
+        "extra": []
+      },
+      "latencyMs": 10045,
+      "promptTokens": 11928,
+      "completionTokens": 2097,
+      "citationsReturned": 20,
+      "citationsVerified": 17,
+      "error": null
+    },
+    {
+      "request": "community-schools",
+      "split": "demo",
+      "rows": [
+        {
+          "id": "E-1001",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Personnel",
+            "got": "Personnel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1002",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Fringe Benefits",
+            "got": "Fringe Benefits",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1003",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1004",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1005",
+          "expected": "likely_unallowable",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Travel",
+            "got": "Travel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1006",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1007",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1010",
+          "expected": "needs_review",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": false,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "E-1011",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        }
+      ],
+      "code": {
+        "expected": [
+          "error:NOT_YET_PAID:E-1009",
+          "error:OUTSIDE_BUDGET_PERIOD:E-1008",
+          "review:OVER_CATEGORY_BUDGET:E-1005",
+          "review:POSSIBLE_DUPLICATE:E-1007"
+        ],
+        "got": [
+          "error:NOT_YET_PAID:E-1009",
+          "error:OUTSIDE_BUDGET_PERIOD:E-1008",
+          "review:OVER_CATEGORY_BUDGET:E-1005",
+          "review:POSSIBLE_DUPLICATE:E-1007"
+        ],
+        "missed": [],
+        "extra": []
+      },
+      "latencyMs": 9743,
+      "promptTokens": 11306,
+      "completionTokens": 2011,
+      "citationsReturned": 18,
+      "citationsVerified": 17,
+      "error": null
+    },
+    {
+      "request": "talent-search",
+      "split": "demo",
+      "rows": [
+        {
+          "id": "N-1101",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Personnel",
+            "got": "Personnel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "N-1102",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Fringe Benefits",
+            "got": "Fringe Benefits",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "N-1103",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Travel",
+            "got": "Travel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "N-1104",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "N-1105",
+          "expected": "needs_review",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": {
+            "expected": 1299,
+            "got": 1299
+          },
+          "injection": {
+            "got": true,
+            "notAllowed": true
+          }
+        },
+        {
+          "id": "N-1106",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        }
+      ],
+      "code": {
+        "expected": [
+          "review:INSTRUCTION_IN_DATA:N-1105"
+        ],
+        "got": [
+          "review:INSTRUCTION_IN_DATA:N-1105"
+        ],
+        "missed": [],
+        "extra": []
+      },
+      "latencyMs": 6238,
+      "promptTokens": 10821,
+      "completionTokens": 1259,
+      "citationsReturned": 12,
+      "citationsVerified": 12,
+      "error": null
+    },
+    {
+      "request": "harbor-charter",
+      "split": "held-out",
+      "rows": [
+        {
+          "id": "H-01",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Personnel",
+            "got": "Personnel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-02",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-03",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-04",
+          "expected": "likely_unallowable",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": {
+            "got": true,
+            "notAllowed": true
+          }
+        },
+        {
+          "id": "H-05",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-06",
+          "expected": "allowable",
+          "got": "allowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Equipment",
+            "got": "Equipment",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-07",
+          "expected": "likely_unallowable",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-08",
+          "expected": "needs_review",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Travel",
+            "got": "Travel",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": {
+            "expected": 4150,
+            "got": null
+          },
+          "injection": null
+        },
+        {
+          "id": "H-09",
+          "expected": "likely_unallowable",
+          "got": "likely_unallowable",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": null,
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-10",
+          "expected": "allowable",
+          "got": "needs_review",
+          "acceptable": false,
+          "exact": false,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Supplies",
+            "got": "Supplies",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-11",
+          "expected": "allowable",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": false,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Contractual",
+            "got": "Contractual",
+            "ok": true
+          },
+          "mismatch": {
+            "expected": true,
+            "got": true
+          },
+          "partial": null,
+          "injection": null
+        },
+        {
+          "id": "H-12",
+          "expected": "needs_review",
+          "got": "needs_review",
+          "acceptable": true,
+          "exact": true,
+          "unsafeMiss": false,
+          "overCall": false,
+          "category": {
+            "expected": "Other",
+            "got": "Other",
+            "ok": true
+          },
+          "mismatch": null,
+          "partial": null,
+          "injection": null
+        }
+      ],
+      "code": {
+        "expected": [
+          "review:EQUIPMENT_THRESHOLD:H-02",
+          "review:INSTRUCTION_IN_DATA:H-04"
+        ],
+        "got": [
+          "review:EQUIPMENT_THRESHOLD:H-02",
+          "review:INSTRUCTION_IN_DATA:H-04"
+        ],
+        "missed": [],
+        "extra": []
+      },
+      "latencyMs": 9636,
+      "promptTokens": 11770,
+      "completionTokens": 2111,
+      "citationsReturned": 22,
+      "citationsVerified": 21,
+      "error": null
+    }
+  ]
+}

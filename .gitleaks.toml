@@ -1,0 +1,12 @@
+# gitleaks configuration (CI secret scan).
+title = "drawwell"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Recorded runs (request IDs, synthetic records) and the public eCFR snapshot"
+paths = [
+  '''docs/results/.*\.json$''',
+  '''src/rules/2cfr200/.*\.json$''',
+]
