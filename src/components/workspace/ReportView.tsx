@@ -129,7 +129,7 @@ export function ReportView({
                 const as = review.assessments[r.id];
                 return (
                   <tr key={r.id} className="border-b border-rule align-top">
-                    <td className="py-1.5 pr-2 font-mono">{r.id}</td>
+                    <td className="py-1.5 pr-2 font-mono whitespace-nowrap">{r.id}</td>
                     <td className="pr-2">{r.payee}<div className="text-ink-faint">{r.description} · {formatShortDate(r.incurredDate)}</div></td>
                     <td className="pr-2">{r.category}</td>
                     <td className="pr-2 text-right"><Money cents={r.amountCents} /></td>

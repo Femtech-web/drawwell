@@ -19,6 +19,8 @@
 
 **OpenServ SERV Hackathon Edition 02 · Open Track**
 
+<img src="docs/assets/home.png" alt="Drawwell's landing page: every drawdown now needs a justification" width="860" />
+
 </div>
 
 On **September 28, 2026** the Department of Education told every grant recipient that, starting **November 1**, each G5 payment request needs a written justification of **255 characters or fewer** naming the program, the expense categories and amounts, and the start and end dates of the expenses, "clear without additional narrative" ([K-12 Dive](https://www.k12dive.com/news/education-department-wants-grantees-to-defend-the-spend-DOGE/831743/), [ED's G5 walkthrough](https://www.ed.gov/media/document/g5-grantee-dashboard-submitting-payments-requests-and-payment-justifications-september-28-2026-114638.pdf)). A justification ED questions comes back by email, and the payment waits until it is fixed.
@@ -64,6 +66,12 @@ The Upward Bound sample draws its November cash needs in advance: twelve ledger 
 | L-1106 | Staff appreciation lunch | SERV, with verified citations | Your judgment: likely unallowable |
 
 Every citation in that run, 11 of 11, and every award-term quote, 4 of 4, was found word for word in its source. Then the budget table shows Supplies over its approved line, SERV drafts the 255-character justification from what remains, and the checks turn green.
+
+| What the review found | The justification, checked |
+|---|---|
+| <img src="docs/assets/findings.png" alt="Fix before submitting: a $27 receipt mismatch SERV found and code verified, an advance drawn too early, an invoice drawn twice" width="440" /> | <img src="docs/assets/justification.png" alt="Budget position and the G5 comment box: SERV's 254-character draft with all eight checks passing" width="440" /> |
+
+The [evidence report](docs/assets/evidence-report.png) from the same run traces every dollar to its row, document, rule and decision, and lists each SERV call: the first came back empty in 2.7 s, the retry without Prompt Guard answered in 60 s.
 
 ## Try it
 

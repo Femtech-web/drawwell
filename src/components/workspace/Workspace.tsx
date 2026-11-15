@@ -308,7 +308,7 @@ export function Workspace() {
                 {[...review.calls, ...(justification?.calls ?? [])].map((c, i) => (
                   <div key={i} className="flex justify-between gap-2">
                     <span className="font-mono truncate" title={`${c.modelId}${c.features.promptGuard ? " + prompt guard" : ""}${c.features.shadowAgent ? " + shadow agent" : ""}`}>
-                      {c.purpose} · {c.modelId}{c.features.promptGuard ? " +guard" : ""}{c.outcome === "empty" ? " · empty, retried" : c.outcome === "error" ? " · failed, retried" : ""}
+                      {c.purpose}{c.outcome === "empty" ? " · empty, retried" : c.outcome === "error" ? " · failed, retried" : ""} · {c.modelId}{c.features.promptGuard ? " +guard" : ""}
                     </span>
                     <span className="tabular shrink-0">{(c.latencyMs / 1000).toFixed(1)}s</span>
                   </div>
