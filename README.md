@@ -164,7 +164,7 @@ Runs: `2026-11-15T06-20-48-564Z-code-only-gpt-5.4-mini.json`, `2026-11-15T20-00-
 
 - **Code rules only:** Drawwell's code checks plus a generic red-flag keyword list. **One plain SERV call:** a minimal prompt with the documents, no rule text, no award terms, no verification, the way most apps add AI. **Drawwell, SERV features off:** the full Drawwell prompt and verification on the base model. **Drawwell:** what ships.
 - **Unsafe misses** (an unallowable cost called allowable) and **over-calls** (a cost an exception allows called unallowable) are the strict signals; "defensible" accepts every answer a careful reviewer could give.
-- **Cost** is estimated from returned token counts at SERV's published prices. Actual billing was noticeably higher (the hackathon's $5 credit ran out during development): Multipath and Shadow Agent make calls of their own that these counts don't show.
+- **Cost** is estimated from returned token counts at SERV's published prices, and billing matched: after the starting $1 credit ran out during development, the benchmarks and every end-to-end and live check that followed used about $1 of a $5 top-up (roughly $0.07 per review).
 - Read with care: 37 rows is small; the builder wrote the labels; three of four requests were seen while writing prompts; the keyword baseline was written after the demo rows existed.
 
 ## Checked and attacked
