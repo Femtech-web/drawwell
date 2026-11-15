@@ -216,6 +216,7 @@ export default function Home() {
           <div className="card p-6">
             <div className="font-semibold">State education agencies</div>
             <p className="mt-2 text-sm text-ink-soft">Federal education money reaches districts through states, so states now review district justifications before ED does. A reviewer view, licensed per state, turns that queue into a checklist.</p>
+            <a href="/reviewer" className="mt-3 inline-block text-sm underline underline-offset-2">Try the reviewer view</a>
           </div>
         </div>
         <p className="mt-5 text-sm text-ink-faint max-w-3xl">The same check applies wherever a federal agency asks recipients to justify each drawdown: HHS has since 2025, and NASA, NIH and the Department of Labor have their own versions. Department of Education first.</p>

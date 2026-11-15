@@ -30,6 +30,7 @@ Everything below can be checked on the live site (no account) or from a clone wi
 | 11 | Drawwell beats a plain AI call on what matters in money | Evaluation page | The plain call proposes false partial removals and false receipt mismatches; Drawwell's verification blocks them | [`docs/results/benchmark/`](docs/results/benchmark/) |
 | 12 | An empty SERV response doesn't break a review | `pnpm test` | `review.test.ts`: retried without Prompt Guard, both attempts recorded | [`src/engine/review.ts`](src/engine/review.ts) |
 | 13 | No key or records leak | Read the API routes; CI | Key server-only; request bodies never logged; gitleaks on every push; no `.env` tracked | [`.github/workflows/ci.yml`](.github/workflows/ci.yml), [`src/app/api/review/route.ts`](src/app/api/review/route.ts) |
+| 14 | State agencies can check a whole queue of district justifications | Live site → For state reviewers | Sample queue: 3 ready, 5 need follow-up ("payroll", amounts that don't add up, "Fringe" instead of "Fringe Benefits", an email address, 300+ characters) | [`src/engine/reviewer.ts`](src/engine/reviewer.ts), `tests/reviewer.test.ts` |
 
 ## What this does not show
 

@@ -35,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </Link>
             <nav className="flex items-center gap-1 text-sm text-ink-soft overflow-x-auto">
               <Link className="px-2.5 py-1.5 rounded whitespace-nowrap hover:bg-paper-deep hover:text-ink" href="/review">Review a drawdown</Link>
+              <Link className="px-2.5 py-1.5 rounded whitespace-nowrap hover:bg-paper-deep hover:text-ink" href="/reviewer">For state reviewers</Link>
               <Link className="px-2.5 py-1.5 rounded whitespace-nowrap hover:bg-paper-deep hover:text-ink" href="/how-it-works">How it works</Link>
               <Link className="px-2.5 py-1.5 rounded whitespace-nowrap hover:bg-paper-deep hover:text-ink" href="/evaluation">Evaluation</Link>
               <Link className="px-2.5 py-1.5 rounded whitespace-nowrap hover:bg-paper-deep hover:text-ink" href="/sources">Sources</Link>

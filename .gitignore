@@ -42,7 +42,5 @@ next-env.d.ts
 
 !.env.example
 
-# demo film: dependencies, renders and generated audio stay local
-marketing/**/node_modules/
-marketing/**/out/
-marketing/audio/
+# demo film and its assets stay local
+marketing/

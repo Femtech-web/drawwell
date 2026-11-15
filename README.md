@@ -13,7 +13,7 @@
 
 [![CI](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml/badge.svg)](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f6b4f)](LICENSE)
-![Tests](https://img.shields.io/badge/tests-33%20passing-2f6b4f)
+![Tests](https://img.shields.io/badge/tests-40%20passing-2f6b4f)
 ![Rules](https://img.shields.io/badge/2%20CFR%20200-25%20sections%20·%20eCFR%20snapshot-17212b)
 ![SERV](https://img.shields.io/badge/SERV%20Reasoning-Multipath%20·%20Shadow%20Agent%20·%20Prompt%20Guard%20·%20strict%20schema-a8322a)
 
@@ -55,7 +55,7 @@ Drawwell prepares a request. It does not submit to G5, approve payments or give 
 
 - **Small grantees** (TRIO programs, community school partnerships, charter networks, adult education providers): one finance person drawing federal cash every two weeks. A subscription per award, priced below an hour of a consultant's time a month.
 - **Fiscal sponsors and grant consultants:** one office drawing for dozens of awards; per-seat pricing, with evidence reports to hand each client and auditor.
-- **State education agencies:** federal education money reaches districts through states, so states now review district justifications before ED does. A reviewer view, licensed per state.
+- **State education agencies:** federal education money reaches districts through states, so states now review district justifications before ED does. The [reviewer view](#try-it) checks a whole queue of district justifications against ED's required elements, in the browser; licensed per state.
 
 The same check applies wherever an agency asks recipients to justify each drawdown: HHS has since 2025, and NASA, NIH and the Department of Labor have their own versions. Department of Education first.
 
@@ -90,7 +90,9 @@ The [evidence report](docs/assets/evidence-report.png) from the same run traces 
 3. Decide the judgment items, then **Draft with SERV** in Step 4 and watch the checks. Edit a number in the comment box and see the check fail.
 4. **Open evidence report**: the request, the justification, the line-by-line trace, every decision and every SERV call. Print it or download the JSON.
 
-The other samples: **Full-Service Community Schools** (reimbursement: an unpaid cost, a cost from before the budget period, lobbying, gift cards the award doesn't include) and **Talent Search** (a clean request except one receipt with instructions aimed at AI reviewers). **Use your own files** takes a budget CSV and a ledger CSV ([templates](public/templates/)), with receipts and award terms optional; malformed files get line-numbered errors before anything is sent.
+The other samples: **Full-Service Community Schools** (reimbursement: an unpaid cost, a cost from before the budget period, lobbying, gift cards the award doesn't include) and **Talent Search** (a clean request except one receipt with instructions aimed at AI reviewers). **For state reviewers** (`/reviewer`): load a CSV of district submissions (grantee, program, award number, amount, justification) and see which have every element ED requires and which need follow-up, with the exact gap for each; the sample queue has eight fictional districts. It runs entirely in the browser and needs no SERV call.
+
+**Use your own files** takes a budget CSV and a ledger CSV ([templates](public/templates/)), with receipts and award terms optional; malformed files get line-numbered errors before anything is sent.
 
 ## How it works
 
@@ -167,7 +169,7 @@ Runs: `2026-11-15T06-20-48-564Z-code-only-gpt-5.4-mini.json`, `2026-11-15T20-00-
 ## Checked and attacked
 
 - **[Guarantees, attacks and what you still trust](docs/threat-model.md):** ten guarantees, each with the test that holds it; fourteen attacks and failure modes, from instructions hidden in a receipt to an exhausted SERV balance, and what happens in each.
-- **33 engine tests** (`pnpm test`, no key needed): CSV parsing, exact-cent money, business days, every code check on every sample, the justification checks (ED's required elements; HHS's "payroll" example fails four), and SERV-output verification with fabricated responses: invented citations dropped, unverified totals ignored, shared payroll registers accepted, no model-only blocking error, and the empty-response fallback with a mocked SERV.
+- **40 engine tests** (`pnpm test`, no key needed): CSV parsing, exact-cent money, business days, every code check on every sample, the justification checks (ED's required elements; HHS's "payroll" example fails four), and SERV-output verification with fabricated responses: invented citations dropped, unverified totals ignored, shared payroll registers accepted, no model-only blocking error, and the empty-response fallback with a mocked SERV.
 - **Three bugs found by live runs and fixed:** payroll registers that support two rows were flagged as receipt mismatches; a catering row was rejected whole after its wine line was already split out; empty SERV responses failed the review. Each has a test now.
 - **CI** runs the tests, lint and a production build on every push, with a gitleaks secret scan and a check that no `.env` file is tracked.
 
@@ -179,7 +181,7 @@ SERV and its upstream model see the rows and documents sent for review (Drawwell
 
 ```bash
 pnpm install
-pnpm test                       # 33 engine tests, no key needed
+pnpm test                       # 40 engine tests, no key needed
 cp .env.example .env            # add SERV_API_KEY from console.openserv.ai
 pnpm dev                        # http://localhost:3000
 pnpm smoke                      # live SERV feature combinations
