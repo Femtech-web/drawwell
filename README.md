@@ -9,7 +9,7 @@
 ### Since November 1, every Education Department grantee must justify each drawdown in 255 characters.
 **Drawwell checks the draw before you write it: code proves the errors, SERV Reasoning applies the federal cost rules to every line, and you make the judgment calls.**
 
-[Live site](https://drawwell.vercel.app) · [Demo video](VIDEO_URL) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md) · [Submission kit](docs/SUBMISSION.md)
+[Live site](https://drawwell.vercel.app) · [Demo video](https://youtu.be/keEElunJfV0) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md)
 
 [![CI](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml/badge.svg)](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f6b4f)](LICENSE)
@@ -84,7 +84,7 @@ The [evidence report](docs/assets/evidence-report.png) from the same run traces 
 
 ## Try it
 
-**Live site:** https://drawwell.vercel.app · **Demo video:** VIDEO_URL
+**Live site:** https://drawwell.vercel.app · **Demo video:** https://youtu.be/keEElunJfV0
 
 1. Open **Review a drawdown** and pick **Upward Bound · November advance** (fictional organization, synthetic records, award number `P047A26DEMO`).
 2. Open any row to read its receipt, then **Run the review**. It is one live SERV call; the sidebar shows the model, the SERV features, the time and how many citations were verified.
@@ -227,7 +227,6 @@ Built during the SERV Hackathon Edition 02 (November 2026) for the **Open Track*
 | PDF receipts, read as text and held to the same checks | [`src/server/pdf.ts`](src/server/pdf.ts), [`src/app/api/extract/route.ts`](src/app/api/extract/route.ts) |
 | State reviewer view (queue check, in the browser) | [`src/engine/reviewer.ts`](src/engine/reviewer.ts), [`/reviewer`](https://drawwell.vercel.app/reviewer) |
 | Frozen benchmark with baselines and a held-out request | [`scripts/eval/run.ts`](scripts/eval/run.ts), [`fixtures/benchmark/`](fixtures/benchmark/) |
-| Write-up, X post and demo script | [`docs/SUBMISSION.md`](docs/SUBMISSION.md) |
 
 ## Repository
 
@@ -242,7 +241,7 @@ fixtures/awards/     the three samples: award, terms, budget, ledger, receipts
 fixtures/benchmark/  the held-out request and the frozen labels
 scripts/             rules fetch, sample and results bundling, SERV smoke tests, benchmark
 tests/               engine unit tests (vitest)
-docs/                threat model, submission kit, results of every run
+docs/                threat model, screenshots, results of every run
 ```
 
 ## License
