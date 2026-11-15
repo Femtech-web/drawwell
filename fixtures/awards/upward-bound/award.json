@@ -1,0 +1,40 @@
+{
+  "id": "upward-bound",
+  "label": "Upward Bound \u00b7 November advance",
+  "summary": "A first-time college prep program draws its November cash needs in advance. Fourteen ledger rows, several with problems a reviewer would catch.",
+  "award": {
+    "awardNumber": "P047A26DEMO",
+    "programName": "Upward Bound",
+    "assistanceListing": "84.047A",
+    "recipient": "Riverbend Community Learning Center (fictional)",
+    "budgetPeriodStart": "2026-09-01",
+    "budgetPeriodEnd": "2027-08-31",
+    "paymentBasis": "advance",
+    "advanceWindowDays": 3,
+    "capitalizationThreshold": 5000,
+    "requestDate": "2026-11-16"
+  },
+  "terms": [
+    {
+      "id": "T-1",
+      "title": "Payment method",
+      "text": "Payments under this award are made in advance through G5. Request funds only for immediate cash needs and disburse them promptly under the recipient's written cash management procedures, which allow up to three business days between receipt and disbursement."
+    },
+    {
+      "id": "T-2",
+      "title": "Activities in the approved budget narrative",
+      "text": "The approved budget narrative includes meals or light refreshments for participants and their family members at college-planning workshops (Other), cultural enrichment field trips for participants (Other), and monthly participant stipends (Training Stipends)."
+    },
+    {
+      "id": "T-3",
+      "title": "Equipment",
+      "text": "No equipment is included in the approved budget. Any purchase of equipment requires prior written approval from the program officer."
+    },
+    {
+      "id": "T-4",
+      "title": "Travel",
+      "text": "Staff travel follows the recipient's written travel policy, which limits airfare to the lowest available coach fare unless the traveler documents a medical need."
+    }
+  ],
+  "order": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "harbor-charter",
+  "order": 99,
+  "label": "Charter Schools Program · held-out benchmark",
+  "summary": "Held-out benchmark request. Not used for prompt development.",
+  "award": {
+    "awardNumber": "U282M26DEMO",
+    "programName": "Charter Schools Program",
+    "assistanceListing": "84.282M",
+    "recipient": "Harbor Charter Network (fictional)",
+    "budgetPeriodStart": "2026-07-01",
+    "budgetPeriodEnd": "2027-06-30",
+    "paymentBasis": "advance",
+    "advanceWindowDays": 3,
+    "capitalizationThreshold": 5000,
+    "requestDate": "2026-11-16"
+  },
+  "terms": [
+    { "id": "T-1", "title": "Payment method", "text": "Funds are paid in advance through G5 for immediate cash needs and must be disbursed within three business days under the recipient's written cash management procedures." },
+    { "id": "T-2", "title": "Approved student activities", "text": "The approved budget narrative includes field trips tied to the science curriculum for students at new campuses, including admission and transportation (Other)." },
+    { "id": "T-3", "title": "Approved equipment", "text": "The approved budget includes one laboratory fume hood for the chemistry classroom at the new high school campus (Equipment). This line constitutes prior approval for that purchase." },
+    { "id": "T-4", "title": "Outreach", "text": "Outreach to recruit students for new campuses, including notices to families in the attendance area, is an approved activity. Other advertising is not included in the approved budget." }
+  ]
+}

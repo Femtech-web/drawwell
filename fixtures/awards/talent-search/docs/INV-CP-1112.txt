@@ -1,0 +1,5 @@
+COLLEGEPATH INC.
+Invoice INV-CP-1112     Date 11/12/2026
+Annual license, CollegePath Advisor (3 seats), 12/01/2026 - 11/30/2027   1,800.00
+TOTAL                                                                $1,800.00
+Due 11/19/2026

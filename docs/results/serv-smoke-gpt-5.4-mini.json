@@ -1,0 +1,118 @@
+{
+  "ranAt": "2026-11-15T19:59:26.597Z",
+  "model": "gpt-5.4-mini",
+  "results": [
+    {
+      "case": "plain",
+      "ok": true,
+      "modelId": "gpt-5.4-mini",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 5182,
+      "usage": {
+        "promptTokens": 489,
+        "completionTokens": 74,
+        "totalTokens": 563
+      },
+      "finishReason": "stop",
+      "parseOk": null,
+      "correct": null,
+      "contentPreview": "{\"results\":[{\"id\":\"A\",\"classification\":\"likely_unallowable\",\"supporting_rule\":\"\\\"The cost of alcoholic beverages is unallowable.\\\"\"},{\"id\":\"B\",\"classification\":\"allowable\",\"supporting_rule\":\"\\\"(a) Costs incurred for materials, supplies, and fabricated parts necessary for the performance of a Federal"
+    },
+    {
+      "case": "json_schema",
+      "ok": true,
+      "modelId": "gpt-5.4-mini",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 1634,
+      "usage": {
+        "promptTokens": 580,
+        "completionTokens": 92,
+        "totalTokens": 672
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"\\\"The cost of alcoholic beverages is unallowable.\\\"\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"\\\"Costs incurred for materials, supplies, and fabricated parts necessary for the performance of "
+    },
+    {
+      "case": "multipath+schema",
+      "ok": true,
+      "modelId": "gpt-5.4-mini-serv-multipath",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 4747,
+      "usage": {
+        "promptTokens": 413,
+        "completionTokens": 84,
+        "totalTokens": 497
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"The cost of alcoholic beverages is unallowable.\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"Costs incurred for materials, supplies, and fabricated parts necessary for the performance of a Fede"
+    },
+    {
+      "case": "kronos+schema",
+      "ok": true,
+      "modelId": "gpt-5.4-mini-serv-kronos",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 4730,
+      "usage": {
+        "promptTokens": 512,
+        "completionTokens": 86,
+        "totalTokens": 598
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"\\\"The cost of alcoholic beverages is unallowable.\\\"\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"\\\"Costs incurred for materials, supplies, and fabricated parts necessary for the performance of "
+    },
+    {
+      "case": "shadow+schema",
+      "ok": true,
+      "modelId": "gpt-5.4-mini",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 6231,
+      "usage": {
+        "promptTokens": 580,
+        "completionTokens": 84,
+        "totalTokens": 664
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"The cost of alcoholic beverages is unallowable.\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"(a) Costs incurred for materials, supplies, and fabricated parts necessary for the performance of a "
+    },
+    {
+      "case": "prompt_guard+schema",
+      "ok": true,
+      "modelId": "gpt-5.4-mini",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 2528,
+      "usage": {
+        "promptTokens": 580,
+        "completionTokens": 84,
+        "totalTokens": 664
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"The cost of alcoholic beverages is unallowable.\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"Costs incurred for materials, supplies, and fabricated parts necessary for the performance of a Fede"
+    },
+    {
+      "case": "full",
+      "ok": true,
+      "modelId": "gpt-5.4-mini-serv-multipath",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 9580,
+      "usage": {
+        "promptTokens": 413,
+        "completionTokens": 84,
+        "totalTokens": 497
+      },
+      "finishReason": "stop",
+      "parseOk": true,
+      "correct": true,
+      "contentPreview": "{\"rows\":[{\"id\":\"A\",\"allowability\":\"likely_unallowable\",\"section\":\"200.423\",\"quote\":\"The cost of alcoholic beverages is unallowable.\"},{\"id\":\"B\",\"allowability\":\"allowable\",\"section\":\"200.453\",\"quote\":\"(a) Costs incurred for materials, supplies, and fabricated parts necessary for the performance of a "
+    }
+  ]
+}

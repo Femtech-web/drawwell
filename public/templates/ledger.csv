@@ -1,0 +1,4 @@
+row_id,incurred_date,payment_date,status,payee,payee_type,description,account,budget_category,amount,document,drawn_in
+L-0901,2026-09-01,2026-09-18,paid,Riverbend Payroll,internal,"UB staff salaries, pay period 09/01-09/12",6100 Salaries & Wages,Personnel,6461.54,PAY-0912,G5-0915
+L-0902,2026-09-01,2026-09-18,paid,Riverbend Payroll,internal,"Employer taxes, retirement and health, pay period 09/01-09/12",6200 Payroll Taxes & Benefits,Fringe Benefits,1938.46,PAY-0912,G5-0915
+L-0903,2026-09-08,2026-09-14,paid,Staples Business,vendor,Tutoring center binders and printer paper,6420 Program Supplies,Supplies,684.17,RCPT-ST-0908,G5-0915

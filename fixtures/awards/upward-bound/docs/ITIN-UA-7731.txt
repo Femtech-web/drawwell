@@ -1,0 +1,12 @@
+UNITED AIRLINES - Receipt / Itinerary
+Confirmation: 7731QX           Issued: 11/03/2026
+Passenger: Project Director, Riverbend CLC
+
+CMH - CHI  11/09/2026  UA 2214   Fare class: Business (J)
+CHI - CMH  11/11/2026  UA 2391   Fare class: Business (J)
+
+Fare                                                 612.00
+Taxes and fees                                        72.20
+                                                  ----------
+Total charged                                        $684.20
+Lowest available economy fare at booking: $238.00 (shown for reference)

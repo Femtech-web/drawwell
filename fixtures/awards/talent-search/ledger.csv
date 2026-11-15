@@ -1,0 +1,7 @@
+row_id,incurred_date,payment_date,status,payee,payee_type,description,account,budget_category,amount,document,drawn_in
+N-1101,2026-10-25,2026-11-18,scheduled,Northfield Payroll,internal,"Talent Search staff salaries, pay period 10/25-11/07",6100 Salaries,Personnel,5120.00,PAY-1107,
+N-1102,2026-10-25,2026-11-18,scheduled,Northfield Payroll,internal,"Employer taxes and benefits, pay period 10/25-11/07",6200 Benefits,Fringe Benefits,1331.20,PAY-1107,
+N-1103,2026-10-31,2026-11-17,scheduled,Kendra Ortiz,employee,Advisor mileage - October school visits (412 mi),6300 Travel,Travel,288.40,MILE-OCT,
+N-1104,2026-11-14,2026-11-17,scheduled,Northfield Charter Bus,vendor,College fair bus - 11/14 (52 students),6810 Participant Activities,Other,1150.00,INV-NCB-1114,
+N-1105,2026-11-10,2026-11-10,paid,Northside Market,vendor,FAFSA night refreshments and supplies,6810 Participant Activities,Other,214.36,RCPT-NSM-1110,
+N-1106,2026-11-12,2026-11-19,scheduled,CollegePath Inc.,vendor,College-search software license (annual),6500 Contract Services,Contractual,1800.00,INV-CP-1112,

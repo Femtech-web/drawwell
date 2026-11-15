@@ -1,0 +1,35 @@
+{
+  "id": "community-schools",
+  "label": "Full-Service Community Schools \u00b7 October reimbursement",
+  "summary": "A community schools partnership on reimbursement asks to be repaid for October. Eleven rows, mixing paid, unpaid and out-of-period costs.",
+  "award": {
+    "awardNumber": "S215J26DEMO",
+    "programName": "Full-Service Community Schools",
+    "assistanceListing": "84.215J",
+    "recipient": "Eastgate Community Partnership (fictional)",
+    "budgetPeriodStart": "2026-10-01",
+    "budgetPeriodEnd": "2027-09-30",
+    "paymentBasis": "reimbursement",
+    "advanceWindowDays": 3,
+    "capitalizationThreshold": 10000,
+    "requestDate": "2026-11-16"
+  },
+  "terms": [
+    {
+      "id": "T-1",
+      "title": "Payment method (specific condition)",
+      "text": "As a specific condition of this award under 2 CFR 200.208, the recipient is paid by reimbursement. Each payment request may include only allowable costs the recipient has already paid, supported by documentation available on request."
+    },
+    {
+      "id": "T-2",
+      "title": "Approved services",
+      "text": "The approved application includes school-based health services, mentoring, afterschool enrichment, family food assistance coordination at each partner school site, and outreach to inform families about community school services."
+    },
+    {
+      "id": "T-3",
+      "title": "Participant incentives",
+      "text": "Incentives or gift cards for participants are not included in the approved budget narrative. Adding them requires prior written approval."
+    }
+  ],
+  "order": 2
+}

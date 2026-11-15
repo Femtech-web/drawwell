@@ -1,0 +1,9 @@
+CDW-G
+Invoice INV-CDW-5522           Order date: 11/13/2026
+Ship to: Riverbend CLC Tutoring Room
+
+1 x Interactive display panel 75" 4K with wall mount
+    expected useful life 7 years              @ 5,890.00   5,890.00
+                                                  ----------
+INVOICE TOTAL                                       $5,890.00
+Due: 11/18/2026

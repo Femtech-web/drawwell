@@ -1,0 +1,533 @@
+{
+  "findings": [
+    {
+      "code": "EQUIPMENT_THRESHOLD",
+      "severity": "review",
+      "source": "code",
+      "rowIds": [
+        "L-1110"
+      ],
+      "title": "Could be equipment",
+      "detail": "L-1110 is $5,890 coded to Supplies. If any single item costs $5,000 or more, it is equipment and may need prior approval.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "Equipment means tangible personal property (including information technology systems) having a useful life of more than one year and a per-unit acquisition cost that equals or exceeds the lesser of the capitalization level established by the recipient or subrecipient for financial statement purposes, or $10,000.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        }
+      ],
+      "id": "EQUIPMENT_THRESHOLD:L-1110"
+    },
+    {
+      "code": "OUTSIDE_ADVANCE_WINDOW",
+      "severity": "error",
+      "source": "code",
+      "rowIds": [
+        "L-1111"
+      ],
+      "title": "Not an immediate cash need",
+      "detail": "L-1111 is scheduled 10 business days after the request; your cash procedures allow 3. Draw it closer to the payment date.",
+      "amountCents": 60000,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.305",
+          "quote": "Advance payments to a recipient or subrecipient must be limited to the minimum amounts needed and be timed with actual, immediate cash requirements of the recipient or subrecipient in carrying out the purpose of the approved program or project.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.305"
+        }
+      ],
+      "id": "OUTSIDE_ADVANCE_WINDOW:L-1111"
+    },
+    {
+      "code": "DUPLICATE_DOCUMENT",
+      "severity": "error",
+      "source": "code",
+      "rowIds": [
+        "L-1112",
+        "L-0906"
+      ],
+      "title": "Same invoice already drawn",
+      "detail": "L-1112 cites document INV-LTC-0930, which L-0906 already used in drawdown G5-1002.",
+      "amountCents": 172500,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "The term improper payment includes: any payment to an ineligible recipient; any payment for an ineligible good or service; any duplicate payment",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        }
+      ],
+      "id": "DUPLICATE_DOCUMENT:L-1112,L-0906"
+    },
+    {
+      "code": "OVER_CATEGORY_BUDGET",
+      "severity": "review",
+      "source": "code",
+      "rowIds": [
+        "L-1104",
+        "L-1109",
+        "L-1110"
+      ],
+      "title": "Supplies over approved budget",
+      "detail": "Supplies drawn to date plus this request is $18,208, $5,708 over the approved $12,500. Check whether your award allows this transfer between categories.",
+      "amountCents": 570800,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.308",
+          "quote": "The recipient or subrecipient must request prior approvals from the Federal agency or pass-through entity for budget and program plan revisions in accordance with this section.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.308"
+        }
+      ],
+      "id": "OVER_CATEGORY_BUDGET:L-1104,L-1109,L-1110"
+    },
+    {
+      "id": "DOCUMENT_MISMATCH:L-1104",
+      "code": "DOCUMENT_MISMATCH",
+      "severity": "error",
+      "source": "serv",
+      "rowIds": [
+        "L-1104"
+      ],
+      "title": "Document total doesn't match the ledger",
+      "detail": "RCPT-BN-2291 shows $1,263.00; the ledger has $1,236.00 (difference $27.00). Correct the ledger or the document before drawing.",
+      "amountCents": 2700,
+      "citations": [
+        {
+          "kind": "document",
+          "ref": "RCPT-BN-2291",
+          "quote": "TOTAL                                               $1,263.00"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": "ALLOWABILITY:L-1104",
+      "code": "NEEDS_REVIEW",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1104"
+      ],
+      "title": "Needs your judgment",
+      "detail": "The receipt total is $1,263.00 but the ledger shows $1,236.00, so the support does not agree with the charge amount.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.403",
+          "quote": "Be adequately documented. See §§ 200.300 through 200.309.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.403"
+        }
+      ]
+    },
+    {
+      "id": "PARTIAL_UNALLOWABLE:L-1105",
+      "code": "PARTIAL_UNALLOWABLE",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1105"
+      ],
+      "title": "Remove $38.00 from this charge?",
+      "detail": "Wine is unallowable alcohol, but the rest of the catering appears tied to the approved college-planning workshop activity.",
+      "amountCents": 3800,
+      "citations": [
+        {
+          "kind": "document",
+          "ref": "RCPT-MESA-1106",
+          "quote": "House red wine (2 btl) @ 19.00                         38.00"
+        },
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.423",
+          "quote": "The cost of alcoholic beverages is unallowable.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.423"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": "ALLOWABILITY:L-1105",
+      "code": "LIKELY_UNALLOWABLE",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1105"
+      ],
+      "title": "Likely unallowable: confirm before drawing",
+      "detail": "The receipt includes wine, and alcoholic beverages are unallowable; the document also shows catering for the family college planning night.",
+      "amountCents": 41260,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.423",
+          "quote": "The cost of alcoholic beverages is unallowable.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.423"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-2: Activities in the approved budget narrative",
+          "quote": "The approved budget narrative includes meals or light refreshments for participants and their family members at college-planning workshops (Other), cultural enrichment field trips for participants (Other), and monthly participant stipends (Training Stipends)."
+        }
+      ]
+    },
+    {
+      "id": "ALLOWABILITY:L-1106",
+      "code": "LIKELY_UNALLOWABLE",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1106"
+      ],
+      "title": "Likely unallowable: confirm before drawing",
+      "detail": "Staff appreciation lunch is a personal benefit for employees, and the cost is unallowable under personal use rules.",
+      "amountCents": 28640,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.445",
+          "quote": "Costs of goods or services for the personal use of the recipient's or subrecipient's employees are unallowable regardless of whether the cost is reported as taxable income to the employees.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.445"
+        }
+      ]
+    },
+    {
+      "id": "ALLOWABILITY:L-1108",
+      "code": "NEEDS_REVIEW",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1108"
+      ],
+      "title": "Needs your judgment",
+      "detail": "The itinerary shows business-class airfare, but the rule has exceptions for higher fare and the record does not rule them out.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.475",
+          "quote": "Airfare costs in excess of the basic least expensive unrestricted accommodations class offered by commercial airlines are unallowable except when such accommodations would:",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.475"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-4: Travel",
+          "quote": "Staff travel follows the recipient's written travel policy, which limits airfare to the lowest available coach fare unless the traveler documents a medical need."
+        }
+      ]
+    },
+    {
+      "id": "CATEGORY_MISMATCH:L-1110",
+      "code": "CATEGORY_MISMATCH",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1110"
+      ],
+      "title": "Coded Supplies; looks like Equipment",
+      "detail": "The panel is equipment because it is a single item with a 7-year life and costs over the threshold, but no equipment is approved and prior written approval is required.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "Equipment means tangible personal property (including information technology systems) having a useful life of more than one year and a per-unit acquisition cost that equals or exceeds the lesser of the capitalization level established by the recipient or subrecipient for financial statement purposes, or $10,000.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        },
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.439",
+          "quote": "Capital expenditures for general purpose equipment, buildings, and land are allowable as direct costs, but only with the prior written approval of the Federal agency or pass-through entity.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.439"
+        }
+      ]
+    },
+    {
+      "id": "ALLOWABILITY:L-1110",
+      "code": "LIKELY_UNALLOWABLE",
+      "severity": "review",
+      "source": "serv",
+      "rowIds": [
+        "L-1110"
+      ],
+      "title": "Likely unallowable: confirm before drawing",
+      "detail": "The panel is equipment because it is a single item with a 7-year life and costs over the threshold, but no equipment is approved and prior written approval is required.",
+      "amountCents": 589000,
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "Equipment means tangible personal property (including information technology systems) having a useful life of more than one year and a per-unit acquisition cost that equals or exceeds the lesser of the capitalization level established by the recipient or subrecipient for financial statement purposes, or $10,000.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        },
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.439",
+          "quote": "Capital expenditures for general purpose equipment, buildings, and land are allowable as direct costs, but only with the prior written approval of the Federal agency or pass-through entity.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.439"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-3: Equipment",
+          "quote": "No equipment is included in the approved budget. Any purchase of equipment requires prior written approval from the program officer."
+        }
+      ]
+    }
+  ],
+  "assessments": {
+    "L-1101": {
+      "rowId": "L-1101",
+      "allowability": "allowable",
+      "reason": "Salary charge matches approved Personnel budget and is supported by the payroll register for the same pay period and amount.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.430",
+          "quote": "Compensation for personal services includes all remuneration, paid currently or accrued, for services of employees rendered during the period of performance under the Federal award, including but not necessarily limited to wages and salaries.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.430"
+        }
+      ],
+      "suggestedCategory": "Personnel",
+      "documentTotalCents": null,
+      "documentVerified": false,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1102": {
+      "rowId": "L-1102",
+      "allowability": "allowable",
+      "reason": "Employer taxes, retirement, and health insurance are fringe benefits and the payroll register shows the same total charged.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.431",
+          "quote": "Fringe benefits include, but are not limited to, the costs of leave, employee insurance, pensions, and unemployment benefits.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.431"
+        }
+      ],
+      "suggestedCategory": "Fringe Benefits",
+      "documentTotalCents": null,
+      "documentVerified": false,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1103": {
+      "rowId": "L-1103",
+      "allowability": "allowable",
+      "reason": "Tutoring services are a contracted service, and the invoice matches the ledger amount and October tutoring description.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.403",
+          "quote": "costs must meet the following criteria to be allowable under Federal awards: (a) Be necessary and reasonable for the performance of the Federal award and be allocable thereto under these principles.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.403"
+        }
+      ],
+      "suggestedCategory": "Contractual",
+      "documentTotalCents": 185000,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1104": {
+      "rowId": "L-1104",
+      "allowability": "needs_review",
+      "reason": "The receipt total is $1,263.00 but the ledger shows $1,236.00, so the support does not agree with the charge amount.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.403",
+          "quote": "Be adequately documented. See §§ 200.300 through 200.309.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.403"
+        }
+      ],
+      "suggestedCategory": "Supplies",
+      "documentTotalCents": 126300,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1105": {
+      "rowId": "L-1105",
+      "allowability": "likely_unallowable",
+      "reason": "The receipt includes wine, and alcoholic beverages are unallowable; the document also shows catering for the family college planning night.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.423",
+          "quote": "The cost of alcoholic beverages is unallowable.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.423"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-2: Activities in the approved budget narrative",
+          "quote": "The approved budget narrative includes meals or light refreshments for participants and their family members at college-planning workshops (Other), cultural enrichment field trips for participants (Other), and monthly participant stipends (Training Stipends)."
+        }
+      ],
+      "suggestedCategory": "Other",
+      "documentTotalCents": 41260,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1106": {
+      "rowId": "L-1106",
+      "allowability": "likely_unallowable",
+      "reason": "Staff appreciation lunch is a personal benefit for employees, and the cost is unallowable under personal use rules.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.445",
+          "quote": "Costs of goods or services for the personal use of the recipient's or subrecipient's employees are unallowable regardless of whether the cost is reported as taxable income to the employees.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.445"
+        }
+      ],
+      "suggestedCategory": "Other",
+      "documentTotalCents": 28640,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1107": {
+      "rowId": "L-1107",
+      "allowability": "allowable",
+      "reason": "The stipend batch matches the approved participant stipend policy and the award narrative allows monthly participant stipends.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.456",
+          "quote": "Participant support costs are allowable (see § 200.1). The classification of items as participant support costs must be documented in the recipient's or subrecipient's written policies and procedures and treated consistently across all Federal awards.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.456"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-2: Activities in the approved budget narrative",
+          "quote": "The approved budget narrative includes meals or light refreshments for participants and their family members at college-planning workshops (Other), cultural enrichment field trips for participants (Other), and monthly participant stipends (Training Stipends)."
+        }
+      ],
+      "suggestedCategory": "Training Stipends",
+      "documentTotalCents": 124000,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1108": {
+      "rowId": "L-1108",
+      "allowability": "needs_review",
+      "reason": "The itinerary shows business-class airfare, but the rule has exceptions for higher fare and the record does not rule them out.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.475",
+          "quote": "Airfare costs in excess of the basic least expensive unrestricted accommodations class offered by commercial airlines are unallowable except when such accommodations would:",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.475"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-4: Travel",
+          "quote": "Staff travel follows the recipient's written travel policy, which limits airfare to the lowest available coach fare unless the traveler documents a medical need."
+        }
+      ],
+      "suggestedCategory": "Travel",
+      "documentTotalCents": 68420,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1109": {
+      "rowId": "L-1109",
+      "allowability": "allowable",
+      "reason": "Chromebooks are computing devices under supplies, not equipment at this price, and the invoice matches the ledger amount.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "Computing devices means machines that acquire, store, analyze, process, and publish data and other information electronically, including accessories (or “peripherals”) for printing, transmitting and receiving, or storing electronic information.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        }
+      ],
+      "suggestedCategory": "Supplies",
+      "documentTotalCents": null,
+      "documentVerified": false,
+      "injectionDetected": false,
+      "downgraded": false
+    },
+    "L-1110": {
+      "rowId": "L-1110",
+      "allowability": "likely_unallowable",
+      "reason": "The panel is equipment because it is a single item with a 7-year life and costs over the threshold, but no equipment is approved and prior written approval is required.",
+      "citations": [
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.1",
+          "quote": "Equipment means tangible personal property (including information technology systems) having a useful life of more than one year and a per-unit acquisition cost that equals or exceeds the lesser of the capitalization level established by the recipient or subrecipient for financial statement purposes, or $10,000.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.1"
+        },
+        {
+          "kind": "cfr",
+          "ref": "2 CFR 200.439",
+          "quote": "Capital expenditures for general purpose equipment, buildings, and land are allowable as direct costs, but only with the prior written approval of the Federal agency or pass-through entity.",
+          "url": "https://www.ecfr.gov/current/title-2/section-200.439"
+        },
+        {
+          "kind": "term",
+          "ref": "Award term T-3: Equipment",
+          "quote": "No equipment is included in the approved budget. Any purchase of equipment requires prior written approval from the program officer."
+        }
+      ],
+      "suggestedCategory": "Equipment",
+      "documentTotalCents": 589000,
+      "documentVerified": true,
+      "injectionDetected": false,
+      "downgraded": false
+    }
+  },
+  "proposedAdjustments": [
+    {
+      "rowId": "L-1105",
+      "removeCents": 3800,
+      "reason": "Wine is unallowable alcohol, but the rest of the catering appears tied to the approved college-planning workshop activity."
+    }
+  ],
+  "servRowIds": [
+    "L-1101",
+    "L-1102",
+    "L-1103",
+    "L-1104",
+    "L-1105",
+    "L-1106",
+    "L-1107",
+    "L-1108",
+    "L-1109",
+    "L-1110"
+  ],
+  "stats": {
+    "rowsExpected": 10,
+    "rowsReturned": 10,
+    "citationsReturned": 11,
+    "citationsVerified": 11,
+    "termRefsReturned": 4,
+    "termRefsVerified": 4,
+    "documentQuotesReturned": 8,
+    "documentQuotesVerified": 7,
+    "downgrades": 0
+  },
+  "calls": [
+    {
+      "purpose": "review",
+      "modelId": "gpt-5.4-mini-serv-multipath",
+      "servedModel": "gpt-5.4-mini-2026-03-17",
+      "latencyMs": 65310,
+      "promptTokens": 12579,
+      "completionTokens": 1953,
+      "requestId": "chatcmpl-Ekafd6Mp9as2xduILXOOIYalbesEx",
+      "attempt": 1,
+      "features": {
+        "multipath": true,
+        "kronos": false,
+        "promptGuard": true,
+        "shadowAgent": true
+      }
+    }
+  ],
+  "servError": null
+}

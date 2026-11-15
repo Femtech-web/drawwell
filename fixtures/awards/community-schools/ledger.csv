@@ -1,0 +1,12 @@
+row_id,incurred_date,payment_date,status,payee,payee_type,description,account,budget_category,amount,document,drawn_in
+E-1001,2026-10-01,2026-10-31,paid,Eastgate Payroll,internal,Community school coordinator salary - October,5100 Salaries,Personnel,7083.33,PAY-OCT,
+E-1002,2026-10-01,2026-10-31,paid,Eastgate Payroll,internal,Coordinator fringe benefits - October,5200 Benefits,Fringe Benefits,2125.00,PAY-OCT,
+E-1003,2026-10-31,2026-11-05,paid,Eastgate Family Health Clinic,vendor,School-based health services - October hours,5400 Partner Contracts,Contractual,9400.00,INV-EFHC-1031,
+E-1004,2026-10-20,2026-10-20,paid,Meta Platforms,vendor,Social media ads - family resource fair outreach,5600 Outreach,Other,350.00,RCPT-META-1020,
+E-1005,2026-10-22,2026-10-22,paid,Capitol Coach Lines,vendor,Bus for coordinator and parents - State Capitol advocacy day,5300 Travel,Travel,1460.00,INV-CAP-1022,
+E-1006,2026-10-14,2026-10-14,paid,Uline,vendor,Food pantry shelving and bins,5500 Program Supplies,Supplies,1184.00,RCPT-ULN-1014,
+E-1007,2026-10-28,2026-10-28,paid,Uline,vendor,Food pantry shelving and bins,5500 Program Supplies,Supplies,1184.00,RCPT-ULN-1028,
+E-1008,2026-09-26,2026-10-08,paid,Bright Futures Arts,vendor,Afterschool enrichment - September sessions,5400 Partner Contracts,Contractual,2650.00,INV-BFA-0926,
+E-1009,2026-10-31,2026-11-20,scheduled,Big Brothers Big Sisters of Eastgate,vendor,Mentoring program - October,5400 Partner Contracts,Contractual,3200.00,INV-BBBS-1031,
+E-1010,2026-10-30,2026-10-30,paid,Target Business,vendor,Gift cards for parent survey participants (40 x $25),5600 Outreach,Other,1000.00,RCPT-GC-1030,
+E-1011,2026-10-24,2026-10-24,paid,Bright Futures Arts,vendor,Afterschool enrichment - October sessions,5400 Partner Contracts,Contractual,2650.00,INV-BFA-1024,
