@@ -152,7 +152,7 @@ export default function Home() {
             <Stamp tone="ok">SERV reasons</Stamp>
             <h3 className="font-display text-xl font-semibold mt-4">The rules, applied to each line</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              SERV Reasoning reads each expense, its receipt and your award terms against 2 CFR 200: budget category, allowability, the wine hidden in a
+              SERV Reasoning reads each expense, its receipt (PDF or text) and your award terms against 2 CFR 200: budget category, allowability, the wine hidden in a
               catering bill. Drawwell keeps a citation only if the quoted rule text exists word for word.
             </p>
           </div>
@@ -226,6 +226,7 @@ export default function Home() {
         <div className="text-sm text-ink-soft space-y-3 max-w-3xl">
           <div className="eyebrow">Scope, honestly</div>
           <p>Department of Education G5 drawdowns, advance or reimbursement. Other agencies&apos; systems have different rules and limits.</p>
+          <p>Receipts as PDFs with a text layer or as text files; scanned or photographed receipts aren&apos;t read yet.</p>
           <p>Drawwell does not submit anything to G5, and passing its checks is not approval. Allowability depends on your award terms; the Department decides.</p>
           <p>Your files are processed for the review and not stored. The public demo is for synthetic or de-identified records.</p>
         </div>

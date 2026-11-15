@@ -38,6 +38,8 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
   const [budgetCsv, setBudgetCsv] = useState("");
   const [ledgerCsv, setLedgerCsv] = useState("");
   const [docs, setDocs] = useState<SupportingDocument[]>([]);
+  const [docNotes, setDocNotes] = useState<string[]>([]);
+  const [readingPdfs, setReadingPdfs] = useState(false);
   const [termsText, setTermsText] = useState("");
   const [issues, setIssues] = useState<(CsvIssue | { file: "award"; line: 0; message: string })[]>([]);
   const set = <K extends keyof Award>(k: K, v: Award[K]) => setAward((a) => ({ ...a, [k]: v }));
@@ -53,11 +55,35 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
 
   async function readDocs(files: FileList | null) {
     if (!files) return;
+    const picked = Array.from(files).slice(0, 60);
+    const isPdf = (f: File) => f.type === "application/pdf" || /\.pdf$/i.test(f.name);
     const out: SupportingDocument[] = [];
-    for (const f of Array.from(files).slice(0, 60)) {
+    const notes: string[] = [];
+    for (const f of picked.filter((f) => !isPdf(f))) {
       if (f.size <= 20_000) out.push({ id: f.name.replace(/\.[^.]+$/, ""), text: (await f.text()).trimEnd() });
+      else notes.push(`${f.name}: larger than 20 KB, skipped.`);
+    }
+    const pdfs = picked.filter(isPdf).slice(0, 20);
+    if (pdfs.length) {
+      setReadingPdfs(true);
+      try {
+        const form = new FormData();
+        pdfs.forEach((f) => form.append("files", f));
+        const res = await fetch("/api/extract", { method: "POST", body: form });
+        const json = await res.json();
+        if (!res.ok) notes.push(json.error ?? "Could not read the PDFs.");
+        for (const r of (json.files ?? []) as { id: string; text: string | null; error: string | null }[]) {
+          if (r.text) out.push({ id: r.id, text: r.text });
+          else notes.push(`${r.id}.pdf: ${r.error}`);
+        }
+      } catch {
+        notes.push("Could not reach the PDF reader. Try again, or upload text receipts.");
+      } finally {
+        setReadingPdfs(false);
+      }
     }
     setDocs(out);
+    setDocNotes(notes);
   }
 
   function check() {
@@ -118,15 +144,26 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
           <Field label="Ledger export (CSV)" hint="One row per expense; mark rows already drawn in drawn_in.">
             <input type="file" name="ledger" accept=".csv,text/csv" className="text-sm" onChange={(e) => readFile(e.target.files?.[0], setLedgerCsv)} />
           </Field>
-          <Field label="Receipts and invoices (optional, .txt)" hint="File name must match the ledger's document column.">
-            <input type="file" name="documents" accept=".txt,text/plain" multiple className="text-sm" onChange={(e) => readDocs(e.target.files)} />
+          <Field label="Receipts and invoices (optional, PDF or .txt)" hint="File name must match the ledger's document column. PDFs are read as text on the server; scanned images aren't read yet.">
+            <input type="file" name="documents" accept=".pdf,application/pdf,.txt,text/plain" multiple className="text-sm" onChange={(e) => readDocs(e.target.files)} />
+            {(readingPdfs || docs.length > 0 || docNotes.length > 0) && (
+              <div className="mt-1.5 text-xs">
+                {readingPdfs ? (
+                  <span className="text-slate">Reading PDFs…</span>
+                ) : (
+                  <span className="text-ledger">{docs.length} document{docs.length === 1 ? "" : "s"} ready</span>
+                )}
+                {docNotes.map((n) => <div key={n} className="text-seal">{n}</div>)}
+              </div>
+            )}
           </Field>
           <Field label="Award terms (optional)" hint="Paste relevant terms; separate each with a blank line.">
             <textarea className={`${input} min-h-24`} value={termsText} onChange={(e) => setTermsText(e.target.value)} />
           </Field>
           <p className="text-xs text-ink-faint">
             Templates: <a className="underline" href="/templates/budget.csv" download>budget.csv</a> ·{" "}
-            <a className="underline" href="/templates/ledger.csv" download>ledger.csv</a>. Use fictional or de-identified data in this public demo.
+            <a className="underline" href="/templates/ledger.csv" download>ledger.csv</a>, and the matching receipts as{" "}
+            <a className="underline" href="/templates/receipts-pdf.zip" download>PDFs (zip)</a>. Use fictional or de-identified data in this public demo.
             Files are checked in your browser; they reach Drawwell&apos;s server and SERV only when you run the review, and Drawwell does not store them.
           </p>
         </div>
@@ -140,7 +177,7 @@ export function UploadPanel({ onLoaded, onCancel }: { onLoaded: (u: UploadResult
         </ul>
       )}
       <div className="mt-6 flex gap-3">
-        <button className="btn btn-primary" onClick={check}>Check files and continue</button>
+        <button className="btn btn-primary" disabled={readingPdfs} onClick={check}>{readingPdfs ? "Reading PDFs…" : "Check files and continue"}</button>
         <button className="btn btn-quiet" onClick={onCancel}>Back to samples</button>
       </div>
     </div>

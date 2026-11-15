@@ -9,11 +9,11 @@
 ### Since November 1, every Education Department grantee must justify each drawdown in 255 characters.
 **Drawwell checks the draw before you write it: code proves the errors, SERV Reasoning applies the federal cost rules to every line, and you make the judgment calls.**
 
-[Live site](https://drawwell.vercel.app) · [Demo video](#try-it) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md) · [Submission kit](docs/SUBMISSION.md)
+[Live site](https://drawwell.vercel.app) · [Demo video](VIDEO_URL) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md) · [Submission kit](docs/SUBMISSION.md)
 
 [![CI](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml/badge.svg)](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f6b4f)](LICENSE)
-![Tests](https://img.shields.io/badge/tests-40%20passing-2f6b4f)
+![Tests](https://img.shields.io/badge/tests-43%20passing-2f6b4f)
 ![Rules](https://img.shields.io/badge/2%20CFR%20200-25%20sections%20·%20eCFR%20snapshot-17212b)
 ![SERV](https://img.shields.io/badge/SERV%20Reasoning-Multipath%20·%20Shadow%20Agent%20·%20Prompt%20Guard%20·%20strict%20schema-a8322a)
 
@@ -30,10 +30,11 @@ This is not hypothetical. HHS has required a justification with every drawdown s
 Writing 255 characters is the easy part. The hard part is that the numbers in it must be ones you can defend: no invoice drawn twice, nothing outside the budget period, nothing your award doesn't allow, receipts that match the ledger. In a small grantee that check is one person with a spreadsheet, every two weeks. **Drawwell is for that person**: the finance lead behind a TRIO program, a community school partnership or a charter network.
 
 1. **Code proves what can be proven** against your own records: invoices already drawn, the same invoice twice, costs outside the budget period, unpaid costs on a reimbursement award, advances drawn before the cash is needed, categories over the approved budget, items above the equipment threshold, text in a record that is addressed to an AI.
-2. **SERV Reasoning applies the rules to every remaining line.** One live call reads each expense with its receipt, your award terms and the text of 2 CFR 200, and decides whether the coded ED 524 budget category fits, whether the cost is allowable or needs judgment, what the receipt actually totals, and which line inside a larger charge is unallowable.
+2. **SERV Reasoning applies the rules to every remaining line.** One live call reads each expense with its receipt (PDF or text), your award terms and the text of 2 CFR 200, and decides whether the coded ED 524 budget category fits, whether the cost is allowable or needs judgment, what the receipt actually totals, and which line inside a larger charge is unallowable.
 3. **Code verifies SERV's evidence.** A citation is kept only if its quote appears word for word in the dated eCFR text or the award term. A receipt total counts only if the quoted line is in the document and shows that amount. A conclusion that loses its citations falls back to review.
 4. **You make the judgment calls.** Costs that depend on an exception, prior approval or your award are never marked unallowable automatically. Remove the wine from a catering bill, exclude a row, or keep it after checking.
 5. **SERV writes the justification** from the final, code-computed totals; code checks every required element, and the evidence report traces each dollar for ED's follow-up email.
+6. **States check the whole queue.** Federal education money reaches districts through the state, so states see every district's justification first. The reviewer view checks a queue of them against ED's required elements, in the browser.
 
 This is the rule that keeps the model honest ([`src/engine/verify.ts`](src/engine/verify.ts)):
 
@@ -83,7 +84,7 @@ The [evidence report](docs/assets/evidence-report.png) from the same run traces 
 
 ## Try it
 
-**Live site:** https://drawwell.vercel.app · **Demo video:** _added at submission_
+**Live site:** https://drawwell.vercel.app · **Demo video:** VIDEO_URL
 
 1. Open **Review a drawdown** and pick **Upward Bound · November advance** (fictional organization, synthetic records, award number `P047A26DEMO`).
 2. Open any row to read its receipt, then **Run the review**. It is one live SERV call; the sidebar shows the model, the SERV features, the time and how many citations were verified.
@@ -92,7 +93,7 @@ The [evidence report](docs/assets/evidence-report.png) from the same run traces 
 
 The other samples: **Full-Service Community Schools** (reimbursement: an unpaid cost, a cost from before the budget period, lobbying, gift cards the award doesn't include) and **Talent Search** (a clean request except one receipt with instructions aimed at AI reviewers). **For state reviewers** (`/reviewer`): load a CSV of district submissions (grantee, program, award number, amount, justification) and see which have every element ED requires and which need follow-up, with the exact gap for each; the sample queue has eight fictional districts. It runs entirely in the browser and needs no SERV call.
 
-**Use your own files** takes a budget CSV and a ledger CSV ([templates](public/templates/)), with receipts and award terms optional; malformed files get line-numbered errors before anything is sent.
+**Use your own files** takes a budget CSV and a ledger CSV ([templates](public/templates/)), with receipts and award terms optional. Receipts can be **PDFs** (read as text on the server, then held to the same word-for-word checks) or text files; try the sample's receipts as [PDFs](public/templates/receipts-pdf.zip). Malformed files get line-numbered errors before anything is sent.
 
 ## How it works
 
@@ -169,7 +170,7 @@ Runs: `2026-11-15T06-20-48-564Z-code-only-gpt-5.4-mini.json`, `2026-11-15T20-00-
 ## Checked and attacked
 
 - **[Guarantees, attacks and what you still trust](docs/threat-model.md):** ten guarantees, each with the test that holds it; fourteen attacks and failure modes, from instructions hidden in a receipt to an exhausted SERV balance, and what happens in each.
-- **40 engine tests** (`pnpm test`, no key needed): CSV parsing, exact-cent money, business days, every code check on every sample, the justification checks (ED's required elements; HHS's "payroll" example fails four), and SERV-output verification with fabricated responses: invented citations dropped, unverified totals ignored, shared payroll registers accepted, no model-only blocking error, and the empty-response fallback with a mocked SERV.
+- **43 engine tests** (`pnpm test`, no key needed): CSV parsing, exact-cent money, business days, every code check on every sample, the justification checks (ED's required elements; HHS's "payroll" example fails four), and SERV-output verification with fabricated responses: invented citations dropped, unverified totals ignored, shared payroll registers accepted, no model-only blocking error, and the empty-response fallback with a mocked SERV.
 - **Three bugs found by live runs and fixed:** payroll registers that support two rows were flagged as receipt mismatches; a catering row was rejected whole after its wine line was already split out; empty SERV responses failed the review. Each has a test now.
 - **CI** runs the tests, lint and a production build on every push, with a gitleaks secret scan and a check that no `.env` file is tracked.
 
@@ -181,7 +182,7 @@ SERV and its upstream model see the rows and documents sent for review (Drawwell
 
 ```bash
 pnpm install
-pnpm test                       # 40 engine tests, no key needed
+pnpm test                       # 43 engine tests, no key needed
 cp .env.example .env            # add SERV_API_KEY from console.openserv.ai
 pnpm dev                        # http://localhost:3000
 pnpm smoke                      # live SERV feature combinations
@@ -200,7 +201,7 @@ A Next.js 16 app with no database: Vercel (or any Node host) with one secret, `S
 1. **Department of Education G5 only.** HHS (PMS), NASA, NIH and DOL have their own justification fields and limits; not built.
 2. **A subset of the rules.** 25 sections of 2 CFR 200. EDGAR program regulations and program statutes are not loaded unless supplied as award terms.
 3. **Synthetic records.** The samples and benchmark are fictional organizations with records we wrote; no real grantee has used it yet.
-4. **Text documents.** Receipts are read as text. PDFs and photos are not parsed; SERV's documentation does not cover image input.
+4. **Text-based receipts.** PDFs with a text layer and text files are read; scanned or photographed receipts are not (the reader says so per file). SERV's documentation does not cover image input.
 5. **A small benchmark.** 37 labeled rows, labeled by the builder.
 6. **SERV speed and reliability.** With all features on a review usually takes about a minute and occasionally several; empty responses happen. The fallback keeps reviews inside 300 s, at the cost of answering from the features-off configuration when it triggers.
 7. **No USAspending lookup.** The approved budget and draw history come from your files; public award data was left out so it cannot block a review.
@@ -209,7 +210,7 @@ A Next.js 16 app with no database: Vercel (or any Node host) with one secret, `S
 
 | When | What |
 |---|---|
-| Next | **PDF and photo receipts**, read into text before review, with the same quote verification. |
+| Next | **Scanned and photographed receipts:** OCR before review, with the same quote verification PDFs get today. |
 | Next | **HHS Payment Management System profile:** its field length and its "Defend the Spend" guidance, for Head Start and community health grantees. |
 | Then | **Draw history from the accounting system:** QuickBooks and Sage Intacct exports mapped to ED 524 categories once, reused every draw. |
 | Then | **A reviewer view for state agencies,** which now review district justifications before passing them to ED. |
@@ -223,12 +224,15 @@ Built during the SERV Hackathon Edition 02 (November 2026) for the **Open Track*
 |---|---|
 | SERV Reasoning, every review and justification | [`src/serv/client.ts`](src/serv/client.ts), [`src/engine/review.ts`](src/engine/review.ts) |
 | Live feature tests | [`scripts/smoke/serv.ts`](scripts/smoke/serv.ts), [`docs/results/`](docs/results/) |
+| PDF receipts, read as text and held to the same checks | [`src/server/pdf.ts`](src/server/pdf.ts), [`src/app/api/extract/route.ts`](src/app/api/extract/route.ts) |
+| State reviewer view (queue check, in the browser) | [`src/engine/reviewer.ts`](src/engine/reviewer.ts), [`/reviewer`](https://drawwell.vercel.app/reviewer) |
 | Frozen benchmark with baselines and a held-out request | [`scripts/eval/run.ts`](scripts/eval/run.ts), [`fixtures/benchmark/`](fixtures/benchmark/) |
 | Write-up, X post and demo script | [`docs/SUBMISSION.md`](docs/SUBMISSION.md) |
 
 ## Repository
 
 ```
+src/server/          PDF text extraction, request validation, rate limits
 src/engine/          code checks, CSV, money, dates, justification checks, SERV-output verification, orchestration
 src/serv/            SERV client, prompts, schemas
 src/rules/           2 CFR 200 snapshot (eCFR API) and ED guidance with provenance

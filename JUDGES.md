@@ -12,6 +12,8 @@ Everything below can be checked on the live site (no account) or from a clone wi
 4. **Step 4 → Draft with SERV.** Watch the checks: length, program, every category with its exact amount, dates, no personal data. Change an amount in the box and watch a check fail.
 5. **Open evidence report.** Every dollar traced to its row, document, rule and decision, with each SERV call's model, features and request ID.
 6. **Evaluation page.** Four configurations on 37 labeled rows, including a held-out request, with every miss listed.
+7. **For state reviewers.** A queue of eight fictional district justifications: three ready, five needing follow-up, each with its exact gap. Click the "payroll" row.
+8. **Optional, PDFs.** Review a drawdown → Use your own files: the templates plus the [sample receipts as PDFs](public/templates/receipts-pdf.zip). The review finds the same mismatch and wine line in the PDF text.
 
 ## Claims
 
@@ -31,6 +33,7 @@ Everything below can be checked on the live site (no account) or from a clone wi
 | 12 | An empty SERV response doesn't break a review | `pnpm test` | `review.test.ts`: retried without Prompt Guard, both attempts recorded | [`src/engine/review.ts`](src/engine/review.ts) |
 | 13 | No key or records leak | Read the API routes; CI | Key server-only; request bodies never logged; gitleaks on every push; no `.env` tracked | [`.github/workflows/ci.yml`](.github/workflows/ci.yml), [`src/app/api/review/route.ts`](src/app/api/review/route.ts) |
 | 14 | State agencies can check a whole queue of district justifications | Live site → For state reviewers | Sample queue: 3 ready, 5 need follow-up ("payroll", amounts that don't add up, "Fringe" instead of "Fringe Benefits", an email address, 300+ characters) | [`src/engine/reviewer.ts`](src/engine/reviewer.ts), `tests/reviewer.test.ts` |
+| 15 | Real receipts arrive as PDFs; Drawwell reads them and holds them to the same checks | Review a drawdown → Use your own files: the templates and the [sample receipts as PDFs](public/templates/receipts-pdf.zip) | 11 documents ready; the review finds the $1,263.00 vs $1,236.00 mismatch and the $38.00 wine line in the PDF text, every quote verified | [`src/server/pdf.ts`](src/server/pdf.ts), [`src/app/api/extract/route.ts`](src/app/api/extract/route.ts), `tests/pdf.test.ts` |
 
 ## What this does not show
 
