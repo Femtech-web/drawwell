@@ -9,7 +9,7 @@
 ### Since November 1, every Education Department grantee must justify each drawdown in 255 characters.
 **Drawwell checks the draw before you write it: code proves the errors, SERV Reasoning applies the federal cost rules to every line, and you make the judgment calls.**
 
-[Live site](#try-it) · [Demo video](#try-it) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md) · [Submission kit](docs/SUBMISSION.md)
+[Live site](https://drawwell.vercel.app) · [Demo video](#try-it) · [For judges](JUDGES.md) · [How it works](#how-it-works) · [Evaluation](#proven-on-a-frozen-benchmark) · [Checked and attacked](docs/threat-model.md) · [Submission kit](docs/SUBMISSION.md)
 
 [![CI](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml/badge.svg)](https://github.com/Femtech-web/drawwell/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f6b4f)](LICENSE)
@@ -75,7 +75,7 @@ The [evidence report](docs/assets/evidence-report.png) from the same run traces 
 
 ## Try it
 
-**Live site:** _added at deployment_ · **Demo video:** _added at submission_
+**Live site:** https://drawwell.vercel.app · **Demo video:** _added at submission_
 
 1. Open **Review a drawdown** and pick **Upward Bound · November advance** (fictional organization, synthetic records, award number `P047A26DEMO`).
 2. Open any row to read its receipt, then **Run the review**. It is one live SERV call; the sidebar shows the model, the SERV features, the time and how many citations were verified.

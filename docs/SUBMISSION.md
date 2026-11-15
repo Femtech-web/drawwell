@@ -23,7 +23,7 @@ Drawwell checks the draw first: invoices drawn twice, receipts that don't match 
 Code proves the errors. SERV Reasoning applies 2 CFR 200 line by line, and every citation is checked word for word against the eCFR. The judgment calls stay with you.
 
 Built for @openservai SERV Hackathon 02, Open Track.
-Live: <url> · Code: <repo>
+Live: https://drawwell.vercel.app · Code: https://github.com/Femtech-web/drawwell
 
 ## Demo video (about 2.5 minutes)
 
